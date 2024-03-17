@@ -1,1 +1,2 @@
 import './css/styles.css';
+import '@fortawesome/fontawesome-free/css/all.css';

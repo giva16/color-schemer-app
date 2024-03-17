@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Goldman&family=Roboto+Slab:wght@100..900&display=swap');
+
 *,
 *::after,
 *::before {
@@ -10,6 +13,8 @@
   --body-bg-light: #e9ecef;
   --header-bg-light: #e9ecef;
   --color-schemer-bg-light: #fff;
+  --footer-bg-light: #ced4da;
+  --border-light: #afb2b4 2px solid;
 }
 
 html,
@@ -18,27 +23,60 @@ body {
 }
 
 body {
+  font-family: 'Roboto Slab', 'Goldman', 'Times New Roman';
   width: 100vw;
   height: 100vh;
   background-color: var(--body-bg-light);
+  overflow-y: hidden;
 }
 
 header {
-  padding: 40px;
-  border-bottom: #ced4da 2px solid;
-  margin-bottom: 40px;
+  height: 100px;
+  font-family: 'Goldman', 'Roboto Slab', 'Times New Roman';
+  font-size: 2rem;
+  padding: 20px;
+  border-bottom: var(--border-light);
   background-color: var(--header-bg-light);
+}
+
+header > nav {
+  margin: 0 auto;
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fa-github {
+  color: black;
 }
 
 main {
   margin: 0 auto;
-  height: 80%;
-  width: 50%;
+  width: 100%;
+  height: calc(100% - (60px + 100px));
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #schemer {
-  height: 100%;
-  width: 100%;
+  height: 700px;
+  width: 700px;
   background-color: var(--color-schemer-bg-light);
   box-shadow: 0px 1px 3px 1px black;
+}
+
+.footer {
+  font-family: 'Courier New', Courier, monospace;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--footer-bg-light);
+  border-top: var(--border-light);
 }
