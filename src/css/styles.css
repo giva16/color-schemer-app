@@ -1,3 +1,44 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --body-bg-light: #e9ecef;
+  --header-bg-light: #e9ecef;
+  --color-schemer-bg-light: #fff;
+}
+
+html,
 body {
-  background-color: palevioletred;
+  overflow-x: hidden;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--body-bg-light);
+}
+
+header {
+  padding: 40px;
+  border-bottom: #ced4da 2px solid;
+  margin-bottom: 40px;
+  background-color: var(--header-bg-light);
+}
+
+main {
+  margin: 0 auto;
+  height: 80%;
+  width: 50%;
+}
+
+#schemer {
+  height: 100%;
+  width: 100%;
+  background-color: var(--color-schemer-bg-light);
+  box-shadow: 0px 1px 3px 1px black;
 }
