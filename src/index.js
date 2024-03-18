@@ -1,6 +1,6 @@
 import './css/styles.css';
 import '@fortawesome/fontawesome-free/css/all.css';
-import fetchData from './fetchData';
+import ApiHandler from './ApiHandler';
 
 const displayController = (() => {
   const colorSeedInputEl = document.querySelector('.input-color');
@@ -16,7 +16,7 @@ const displayController = (() => {
   // we need the color properties from the data returned
   const renderDisplay = async (e) => {
     e.preventDefault();
-    const data = await fetchData.getData();
+    const data = await ApiHandler.getData();
     console.log(data);
   };
 

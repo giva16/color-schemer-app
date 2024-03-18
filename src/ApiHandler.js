@@ -1,5 +1,5 @@
 // Where we interact with the colors API to fetch our data'
-const fetchData = ((seed, mode) => {
+const ApiHandler = ((seed, mode) => {
   const URL = `https://www.thecolorapi.com/scheme?hex=24B1E0&mode=triad&count=6`;
 
   const getData = async () => {
@@ -12,4 +12,4 @@ const fetchData = ((seed, mode) => {
   return { getData };
 })();
 
-export default fetchData;
+export default ApiHandler;
