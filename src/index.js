@@ -3,9 +3,12 @@ import '@fortawesome/fontawesome-free/css/all.css';
 import ApiHandler from './ApiHandler';
 
 const displayController = (() => {
+  // UI
   const colorSeedInputEl = document.querySelector('.input-color');
   const modeInputEl = document.getElementById('mode');
-  const form = document.getElementById('schemerForm');
+  const formEl = document.getElementById('schemerForm');
+  const schemerEl = document.getElementById('schemer');
+
   let colorSeed = colorSeedInputEl.value.slice(1).toUpperCase();
   let mode = modeInputEl.value;
 
@@ -33,6 +36,18 @@ const displayController = (() => {
     }
   };
 
+  const copyHex = (e) => {
+    if (e.target.classList.contains('hex-code')) {
+      const hexCode = e.target.textContent;
+      navigator.clipboard.writeText(hexCode);
+      e.target.textContent = 'Text Copied';
+
+      setTimeout(() => {
+        e.target.textContent = hexCode;
+      }, 2000);
+    }
+  };
+
   // Event Listeners
   colorSeedInputEl.addEventListener('change', (e) => {
     colorSeed = e.target.value.slice(1).toUpperCase();
@@ -41,7 +56,9 @@ const displayController = (() => {
   modeInputEl.addEventListener('change', (e) => {
     mode = e.target.value;
   });
-  form.addEventListener('submit', renderDisplay);
+  formEl.addEventListener('submit', renderDisplay);
+
+  schemerEl.addEventListener('click', copyHex);
 
   // Make the app submit at start to show the user an example result
   document.addEventListener('DOMContentLoaded', renderDisplay);

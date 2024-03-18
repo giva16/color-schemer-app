@@ -75,6 +75,7 @@ main {
   border: var(--border-light);
   height: 100%;
   width: 100%;
+  padding: 10px 5px;
 }
 
 #schemer,
@@ -141,6 +142,11 @@ main {
   height: 40px;
   text-align: center;
   padding: 5px;
+  cursor: pointer;
+}
+
+.colors-grid > .color > .hex-code:hover {
+  background-color: var(--footer-bg-light);
 }
 
 .footer {
