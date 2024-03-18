@@ -41,6 +41,8 @@ const displayController = (() => {
   modeInputEl.addEventListener('change', (e) => {
     mode = e.target.value;
   });
-
   form.addEventListener('submit', renderDisplay);
+
+  // Make the app submit at start to show the user an example result
+  document.addEventListener('DOMContentLoaded', renderDisplay);
 })();
