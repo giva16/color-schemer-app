@@ -124,6 +124,8 @@ main {
 
 .colors-grid > .color > .scheme {
   flex: 1;
+  outline: var(--border-light);
+  outline-width: 1px;
 }
 
 .colors-grid > .color > .hex-code {

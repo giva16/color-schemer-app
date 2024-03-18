@@ -21,7 +21,7 @@ const displayController = (() => {
   const renderDisplay = async (e) => {
     e.preventDefault();
     const data = await ApiHandler.getData(colorSeed, mode);
-    const colorEls = document.querySelectorAll('.color');
+    const colorEls = document.querySelectorAll('.scheme');
     const colors = data.colors;
 
     for (let i = 0; i < colors.length; i++) {
