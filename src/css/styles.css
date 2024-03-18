@@ -110,6 +110,12 @@ main {
   cursor: pointer;
 }
 
+.controls-container > form > #getScheme:hover,
+.controls-container > form > select:hover,
+.controls-container > form > .input-color:hover {
+  background-color: var(--footer-bg-light);
+}
+
 .controls-container > .colors-grid {
   flex: 1;
   width: 100%;
