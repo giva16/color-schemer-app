@@ -14,6 +14,22 @@
     </header>
     <main>
       <section id="schemer" class="schemer-section">
+        <div class="form-container">
+          <form id="schemerForm">
+            <input type="color" aria-label="color input" class="input-color" />
+            <select name="mode" id="mode" aria-label="mode selector">
+              <option value="monochrome">Monochrome</option>
+              <option value="monochrome-light">Moochrome-Light</option>
+              <option value="monochrome-dark">Monochrome-Dark</option>
+              <option value="analogic">Analogic</option>
+              <option value="complement">Complement</option>
+              <option value="analogic-complement">Analogic-Complement</option>
+              <option value="triad">Triad</option>
+              <option value="quad">Quad</option>
+            </select>
+            <input type="submit" name="getScheme" id="getScheme" value="Get Color Scheme" />
+          </form>
+        </div>
         <div class="colors-gird"></div>
       </section>
     </main>
