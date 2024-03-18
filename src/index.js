@@ -9,24 +9,27 @@ const displayController = (() => {
   let colorSeed = colorSeedInputEl.value.slice(1).toUpperCase();
   let mode = modeInputEl.value;
 
-  // console.log(colorSeed);
-  // console.log(mode);
-
   // render the colors when form is submitted
   const renderColor = (colorEl, color) => {
     colorEl.style.backgroundColor = color;
   };
 
+  // render hexcode when form is submitted
+  const renderHexCode = (hexEl, hex) => {
+    hexEl.textContent = hex;
+  };
   // render the color + hex code to color div
   const renderDisplay = async (e) => {
     e.preventDefault();
     const data = await ApiHandler.getData(colorSeed, mode);
     const colorEls = document.querySelectorAll('.scheme');
+    const hexEls = document.querySelectorAll('.hex-code');
     const colors = data.colors;
 
     for (let i = 0; i < colors.length; i++) {
       const hex = colors[i].hex.value;
       renderColor(colorEls[i], hex);
+      renderHexCode(hexEls[i], hex);
     }
   };
 
