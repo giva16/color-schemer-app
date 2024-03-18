@@ -4,7 +4,7 @@
   "description": "A color scheme generator app for design purposes. Implemented in Vanilla JS",
   "main": "index.js",
   "scripts": {
-    "run": "webpack",
+    "build": "webpack",
     "dev": "webpack serve"
   },
   "keywords": [
