@@ -1,8 +1,7 @@
 // Where we interact with the colors API to fetch our data'
-const ApiHandler = ((seed, mode) => {
-  const URL = `https://www.thecolorapi.com/scheme?hex=24B1E0&mode=triad&count=6`;
-
-  const getData = async () => {
+const ApiHandler = (() => {
+  const getData = async (seed, mode) => {
+    const URL = `https://www.thecolorapi.com/scheme?hex=${seed}&mode=${mode}&count=5`;
     const response = await fetch(URL);
     const data = await response.json();
 

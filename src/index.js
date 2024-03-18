@@ -6,7 +6,7 @@ const displayController = (() => {
   const colorSeedInputEl = document.querySelector('.input-color');
   const modeInputEl = document.getElementById('mode');
   const form = document.getElementById('schemerForm');
-  let colorSeed = colorSeedInputEl.value;
+  let colorSeed = colorSeedInputEl.value.slice(1).toUpperCase();
   let mode = modeInputEl.value;
 
   // console.log(colorSeed);
@@ -16,13 +16,13 @@ const displayController = (() => {
   // we need the color properties from the data returned
   const renderDisplay = async (e) => {
     e.preventDefault();
-    const data = await ApiHandler.getData();
+    const data = await ApiHandler.getData(colorSeed, mode);
     console.log(data);
   };
 
   // Event Listeners
   colorSeedInputEl.addEventListener('change', (e) => {
-    colorSeed = e.target.value;
+    colorSeed = e.target.value.slice(1).toUpperCase();
   });
 
   modeInputEl.addEventListener('change', (e) => {
