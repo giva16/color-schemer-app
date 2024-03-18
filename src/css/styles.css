@@ -41,9 +41,11 @@ header {
 
 header > nav {
   margin: 0 auto;
-  width: 50%;
+  height: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
   align-items: center;
 }
 
@@ -62,8 +64,9 @@ main {
 
 #schemer {
   padding: 5px;
-  height: 700px;
-  width: 700px;
+  flex: 1;
+  max-width: 700px;
+  height: 90%;
   background-color: var(--color-schemer-bg-light);
   box-shadow: 0px 1px 3px 1px black;
 }
@@ -152,4 +155,33 @@ main {
   gap: 10px;
   background-color: var(--footer-bg-light);
   border-top: var(--border-light);
+}
+
+@media all and (max-width: 800px) {
+  header {
+    font-size: 1.5rem;
+  }
+}
+
+@media all and (max-width: 680px) {
+  main {
+    padding: 30px;
+  }
+}
+
+@media all and (max-width: 500px) {
+  .controls-container > form > #getScheme,
+  .controls-container > form > select {
+    font-size: 12px;
+  }
+
+  .controls-container > form > .input-color {
+    width: 100%;
+  }
+
+  .controls-container > form {
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px 5px;
+  }
 }
