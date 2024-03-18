@@ -13,11 +13,21 @@ const displayController = (() => {
   // console.log(mode);
 
   // render the colors when form is submitted
-  // we need the color properties from the data returned
+  const renderColor = (colorEl, color) => {
+    colorEl.style.backgroundColor = color;
+  };
+
+  // render the color + hex code to color div
   const renderDisplay = async (e) => {
     e.preventDefault();
     const data = await ApiHandler.getData(colorSeed, mode);
-    console.log(data);
+    const colorEls = document.querySelectorAll('.color');
+    const colors = data.colors;
+
+    for (let i = 0; i < colors.length; i++) {
+      const hex = colors[i].hex.value;
+      renderColor(colorEls[i], hex);
+    }
   };
 
   // Event Listeners
